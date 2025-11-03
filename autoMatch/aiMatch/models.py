@@ -36,7 +36,7 @@ class ApplicationStageMapping(models.Model):
         return [
             {
                 "code": choice.value,
-                "label": str(choice.label),
+                "label": str(choice.label)
             }
             for choice in cls.HirePortApplicationStages
         ]
@@ -48,7 +48,7 @@ class ApplicationStageMapping(models.Model):
     )
     hireport_stage = models.CharField(
         max_length=2,
-        choices = HirePortApplicationStages,
+        choices = HirePortApplicationStages.choices,
         default=HirePortApplicationStages.JOBREQUISITION,
     )
     explanation = models.CharField(max_length=500)
